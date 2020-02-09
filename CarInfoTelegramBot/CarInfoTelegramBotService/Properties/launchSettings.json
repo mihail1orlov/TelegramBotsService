@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CarInfoTelegramBotService": {
+      "commandName": "Project",
+      "commandLineArgs": "c"
+    }
+  }
+}

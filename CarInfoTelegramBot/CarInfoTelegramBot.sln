@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarInfoTelegramBot", "CarInfoTelegramBot\CarInfoTelegramBot.csproj", "{41A6770F-9B33-4C57-8A7F-357AABA348B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarInfoTelegramBot", "CarInfoTelegramBot\CarInfoTelegramBot.csproj", "{41A6770F-9B33-4C57-8A7F-357AABA348B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarInfoTelegramBotTest", "CarInfoTelegramBotTest\CarInfoTelegramBotTest.csproj", "{4EEE79BB-5FE2-42D0-95F5-3A3043FB1893}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarInfoTelegramBotTest", "CarInfoTelegramBotTest\CarInfoTelegramBotTest.csproj", "{4EEE79BB-5FE2-42D0-95F5-3A3043FB1893}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarInfoTelegramBotService", "CarInfoTelegramBotService\CarInfoTelegramBotService.csproj", "{CA320C84-846A-4039-AB0D-7B3C4379A703}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4EEE79BB-5FE2-42D0-95F5-3A3043FB1893}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EEE79BB-5FE2-42D0-95F5-3A3043FB1893}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EEE79BB-5FE2-42D0-95F5-3A3043FB1893}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA320C84-846A-4039-AB0D-7B3C4379A703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA320C84-846A-4039-AB0D-7B3C4379A703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA320C84-846A-4039-AB0D-7B3C4379A703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA320C84-846A-4039-AB0D-7B3C4379A703}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
