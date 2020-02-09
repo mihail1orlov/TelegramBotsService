@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using CarInfoTelegramBot.Model;
+using Newtonsoft.Json;
 
 namespace CarInfoTelegramBot
 {
@@ -7,8 +8,9 @@ namespace CarInfoTelegramBot
     {
         public void Write(CarInfo carInfo)
         {
-            var contents = "MyJson";
-            File.WriteAllText($"{nameof(carInfo)}.json", contents);
+            var contents = JsonConvert.SerializeObject(carInfo);
+            var path = $"{nameof(carInfo)}.json";
+            File.WriteAllText(path, contents);
         }
     }
 }
