@@ -16,7 +16,7 @@ namespace CarInfoTelegramBotTest
         }
 
         [TestMethod]
-        public void Test()
+        public void WriteTest()
         {
             int mileage = 186019;
             var carInfo = new CarInfo(mileage);
