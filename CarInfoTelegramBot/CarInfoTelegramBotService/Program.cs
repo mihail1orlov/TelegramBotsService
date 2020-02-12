@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ServiceProcess;
+using Microsoft.Extensions.Configuration;
 using Telegram.Bot;
 
 namespace CarInfoTelegramBotService
@@ -11,9 +12,11 @@ namespace CarInfoTelegramBotService
             var currentDomain = AppDomain.CurrentDomain;
             currentDomain.UnhandledException += CurrentDomainOnUnhandledException;
 
+            var config = new ConfigurationBuilder().AddJsonFile("config.json").Build();
+
             var svc = new MainService(new IService[]
             {
-                new TelegramBotService(new TelegramBotClient(AppSettings.Key)),
+                new TelegramBotService(new TelegramBotClient(config["token"])),
             });
 
             if (Array.IndexOf(args, "console") != -1 || Array.IndexOf(args, "c") != -1)

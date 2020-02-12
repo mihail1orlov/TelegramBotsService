@@ -168,6 +168,7 @@ rcf/
 
 # Microsoft Azure ApplicationInsights config file
 ApplicationInsights.config
+config.json
 
 # Windows Store app package directory
 AppPackages/
@@ -243,16 +244,5 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
-/04_Artem/10_zoo
 
 # project work folder
-06_Jury/CalculationServise/files
-06_Jury/CalculationServise/files/**/*.txt
-06_Jury/Genarate_And_Calculate_Services/CalcMathExpressionService/files
-06_Jury/Genarate_And_Calculate_Services/CalcMathExpressionService/files/**/*.txt
-06_Jury/Genarate_And_Calculate_Services/GenerateMathExpressionService/files
-06_Jury/Genarate_And_Calculate_Services/GenerateMathExpressionService/files/*.txt
-
-#ignore .txt file for log
-CW/02Module/202/TestWcf/Client/TestWcfSite/TestWcfSite/Log/*.txt
-CW/02Module/202/TestWcf/Client/TestWcfSite/TestWcfSite/Log/*
