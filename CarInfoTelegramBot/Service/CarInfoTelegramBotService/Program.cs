@@ -25,7 +25,6 @@ namespace CarInfoTelegramBotService
                 Console.WriteLine("Press a key for exit...");
                 Console.ReadKey(true);
                 svc.StopSvc();
-
             }
             else
             {
