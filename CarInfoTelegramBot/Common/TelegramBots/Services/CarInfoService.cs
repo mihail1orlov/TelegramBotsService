@@ -3,15 +3,15 @@ using ServiceCommon;
 using Telegram.Bot;
 using Telegram.Bot.Args;
 
-namespace TelegramBots
+namespace TelegramBots.Services
 {
     public class CarInfoService : IService
     {
         private readonly ITelegramBotClient _telegramBotClient;
 
-        public CarInfoService(string token)
+        public CarInfoService(ITelegramBotClient telegramBotClient)
         {
-            _telegramBotClient = new TelegramBotClient(token);
+            _telegramBotClient = telegramBotClient;
         }
 
         public void Start()

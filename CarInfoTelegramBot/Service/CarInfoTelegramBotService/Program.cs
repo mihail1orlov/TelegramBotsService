@@ -15,9 +15,11 @@ namespace CarInfoTelegramBotService
 
             var config = new ConfigurationBuilder().AddJsonFile("config.json").Build();
 
-            var svc = new MainService(new IService[]
+            ITelegramBotsFactory factory = new TelegramBotsFactory();
+
+            var svc = new MainService(new[]
             {
-                new CarInfoService(config["token"]),
+                factory.GetCarInfoService(config["token"])
             });
 
             if (Array.IndexOf(args, "console") != -1 || Array.IndexOf(args, "c") != -1)
