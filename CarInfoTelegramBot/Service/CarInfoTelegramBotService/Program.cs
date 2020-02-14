@@ -1,7 +1,8 @@
 ﻿using System;
 using System.ServiceProcess;
 using Microsoft.Extensions.Configuration;
-using Telegram.Bot;
+using ServiceCommon;
+using TelegramBots;
 
 namespace CarInfoTelegramBotService
 {
@@ -16,7 +17,7 @@ namespace CarInfoTelegramBotService
 
             var svc = new MainService(new IService[]
             {
-                new TelegramBotService(new TelegramBotClient(config["token"])),
+                new CarInfoService(config["token"]),
             });
 
             if (Array.IndexOf(args, "console") != -1 || Array.IndexOf(args, "c") != -1)

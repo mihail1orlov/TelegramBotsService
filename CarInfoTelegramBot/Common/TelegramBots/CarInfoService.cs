@@ -1,16 +1,17 @@
 ﻿using System;
+using ServiceCommon;
 using Telegram.Bot;
 using Telegram.Bot.Args;
 
-namespace CarInfoTelegramBotService
+namespace TelegramBots
 {
-    public class TelegramBotService : IService
+    public class CarInfoService : IService
     {
         private readonly ITelegramBotClient _telegramBotClient;
 
-        public TelegramBotService(ITelegramBotClient telegramBotClient)
+        public CarInfoService(string token)
         {
-            _telegramBotClient = telegramBotClient;
+            _telegramBotClient = new TelegramBotClient(token);
         }
 
         public void Start()
