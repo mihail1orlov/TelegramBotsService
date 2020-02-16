@@ -11,7 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\CarInfoTelegramBot\CarInfoTelegramBot.csproj" />
     <ProjectReference Include="..\..\Common\ServiceCommon\ServiceCommon.csproj" />
     <ProjectReference Include="..\..\Common\TelegramBots\TelegramBots.csproj" />
   </ItemGroup>

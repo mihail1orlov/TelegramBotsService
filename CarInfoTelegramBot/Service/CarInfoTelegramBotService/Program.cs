@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ServiceProcess;
 using Microsoft.Extensions.Configuration;
-using ServiceCommon;
 using TelegramBots;
 
 namespace CarInfoTelegramBotService
