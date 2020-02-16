@@ -2,6 +2,7 @@
 using ServiceCommon;
 using Telegram.Bot;
 using Telegram.Bot.Args;
+using Telegram.Bot.Types;
 
 namespace TelegramBots.Services
 {
@@ -16,7 +17,7 @@ namespace TelegramBots.Services
 
         public void Start()
         {
-            var user = _telegramBotClient.GetMeAsync().Result;
+            User user = _telegramBotClient.GetMeAsync().Result;
 
             _telegramBotClient.OnMessage += OnMessage;
             _telegramBotClient.StartReceiving();
@@ -36,7 +37,7 @@ namespace TelegramBots.Services
                 return;
             }
 
-            var user = e.Message.From;
+            User user = e.Message.From;
 
             var s = $"Hello! {user.FirstName} {user.LastName}.\nYou said: '{text}'";
             Console.Write(s);
