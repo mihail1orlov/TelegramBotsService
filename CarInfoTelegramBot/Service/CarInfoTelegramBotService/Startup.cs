@@ -1,21 +1,20 @@
 ﻿using System;
 using System.ServiceProcess;
 using Autofac;
+using CarInfoTelegramBotService.Configuration;
+using CarInfoTelegramBotService.Constants;
 using Microsoft.Extensions.Configuration;
 using TelegramBots;
 
 namespace CarInfoTelegramBotService
 {
-    class Startup
+    public class Startup
     {
         private static IContainer Container { get; set; }
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             // This is global error handler
             AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;
-
-            // This is configuration provider 
-            var config = new ConfigurationBuilder().AddJsonFile("config.json").Build();
 
             Container = GetDependencyInjectionContainer();
 
@@ -26,10 +25,12 @@ namespace CarInfoTelegramBotService
             // resolve your ITelegramBotsFactory
             var factory = scope.Resolve<ITelegramBotsFactory>();
 
-            //ITelegramBotsFactory factory = new TelegramBotsFactory();
+            // This is configuration provider
+            var config = scope.Resolve<ICarInfoConfiguration>();
+            
             var svc = new MainService(new[]
             {
-                factory.GetCarInfoService(config["token"])
+                factory.GetCarInfoService(config.Token)
             });
 
             if (Array.IndexOf(args, "console") != -1 || Array.IndexOf(args, "c") != -1)
@@ -52,7 +53,9 @@ namespace CarInfoTelegramBotService
 
             // Usually you're only interested in exposing the type
             // via its interface:
+            builder.RegisterType<FileConstants>().As<IFileConstants>();
             builder.RegisterType<ConfigurationBuilder>().As<IConfigurationBuilder>();
+            builder.RegisterType<CarInfoConfiguration>().As<ICarInfoConfiguration>();
 
             // However, if you want BOTH services (not as common)
             // you can say so:
