@@ -2,8 +2,6 @@
 using System.ServiceProcess;
 using Autofac;
 using CarInfoTelegramBotService.Configuration;
-using CarInfoTelegramBotService.Constants;
-using Microsoft.Extensions.Configuration;
 using TelegramBots;
 
 namespace CarInfoTelegramBotService
@@ -16,7 +14,7 @@ namespace CarInfoTelegramBotService
             // This is global error handler
             AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;
 
-            Container = GetDependencyInjectionContainer();
+            Container = Bootstrapper.GetDependencyInjectionContainer();
 
             // Create the scope
             // use it, then dispose of the scope.
@@ -44,24 +42,6 @@ namespace CarInfoTelegramBotService
             {
                 ServiceBase.Run(svc);
             }
-        }
-
-        private static IContainer GetDependencyInjectionContainer()
-        {
-            // Create your builder.
-            var builder = new ContainerBuilder();
-
-            // Usually you're only interested in exposing the type
-            // via its interface:
-            builder.RegisterType<FileConstants>().As<IFileConstants>();
-            builder.RegisterType<ConfigurationBuilder>().As<IConfigurationBuilder>();
-            builder.RegisterType<CarInfoConfiguration>().As<ICarInfoConfiguration>();
-
-            // However, if you want BOTH services (not as common)
-            // you can say so:
-            builder.RegisterType<TelegramBotsFactory>().AsSelf().As<ITelegramBotsFactory>();
-            
-            return builder.Build();
         }
 
         private static void CurrentDomainOnUnhandledException(object sender, UnhandledExceptionEventArgs args)
