@@ -1,4 +1,5 @@
 ﻿using System;
+using CarInfoCommon.Models;
 using CarInfoTelegramBot.Services;
 using ServiceCommon;
 using Telegram.Bot;
@@ -39,14 +40,22 @@ namespace TelegramBots.Services
             if (text == null)
             {
                 return;
-            }
+            }   
 
-            _receiver.Message();
+            string s;
+            if (int.TryParse(text, out var distance) && _receiver.Message(new CarInfo(distance)))
+            {
+                s = "Your data was save";
+            }
+            else
+            {
+                s = "Error!\nInvalid input format";
+            }
 
             User user = e.Message.From;
 
-            var s = $"Hello! {user.FirstName} {user.LastName}.\nYou said: '{text}'";
-            Console.Write(s);
+            //var s = $"Hello! {user.FirstName} {user.LastName}.\nYou said: '{text}'";
+            //Console.Write(s);
 
             await _telegramBotClient.SendTextMessageAsync(e.Message.Chat.Id, s)
                 .ConfigureAwait(false);

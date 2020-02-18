@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelegramBotsTests", "Common
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarInfoTelegramBotServiceTests", "Service\CarInfoTelegramBotServiceTests\CarInfoTelegramBotServiceTests.csproj", "{C787A41D-0A9B-4504-A5CE-5C46DD77B989}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarInfoCommon", "Common\CarInfoCommon\CarInfoCommon.csproj", "{A01E2E58-8A3B-4937-99A8-DF37FB7DDA85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{C787A41D-0A9B-4504-A5CE-5C46DD77B989}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C787A41D-0A9B-4504-A5CE-5C46DD77B989}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C787A41D-0A9B-4504-A5CE-5C46DD77B989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A01E2E58-8A3B-4937-99A8-DF37FB7DDA85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A01E2E58-8A3B-4937-99A8-DF37FB7DDA85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A01E2E58-8A3B-4937-99A8-DF37FB7DDA85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A01E2E58-8A3B-4937-99A8-DF37FB7DDA85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{B46C5240-FBD5-4FEB-AC4B-3E9632850214} = {17E68EB0-1449-4FD6-9A1A-668FCA08D323}
 		{BFCCFEB1-9F0C-4CEE-A27F-E6C9CF6CD50B} = {17E68EB0-1449-4FD6-9A1A-668FCA08D323}
 		{C787A41D-0A9B-4504-A5CE-5C46DD77B989} = {400F6C0B-609B-4E23-8CC6-E95F7CFDE2A6}
+		{A01E2E58-8A3B-4937-99A8-DF37FB7DDA85} = {17E68EB0-1449-4FD6-9A1A-668FCA08D323}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2091DAEE-6968-4A0F-8811-B0F6FBD9F6EA}

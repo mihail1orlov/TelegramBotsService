@@ -1,12 +1,12 @@
 ﻿using System.IO;
-using CarInfoTelegramBot.Model;
+using CarInfoCommon.Models;
 using Newtonsoft.Json;
 
-namespace CarInfoTelegramBot
+namespace CarInfoTelegramBot.Services
 {
-    public class FileWriter
+    public class FileWriter : IRepository
     {
-        public void Write(CarInfo carInfo)
+        public void Save(CarInfo carInfo)
         {
             var contents = JsonConvert.SerializeObject(carInfo);
             var path = $"{nameof(carInfo)}.json";

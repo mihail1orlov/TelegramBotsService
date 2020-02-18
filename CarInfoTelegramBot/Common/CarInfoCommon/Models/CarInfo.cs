@@ -1,4 +1,4 @@
-﻿namespace CarInfoTelegramBot.Model
+﻿namespace CarInfoCommon.Models
 {
     public class CarInfo
     {

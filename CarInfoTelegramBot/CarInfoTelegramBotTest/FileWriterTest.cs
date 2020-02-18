@@ -20,7 +20,7 @@ namespace CarInfoTelegramBotTest
         {
             int mileage = 186019;
             var carInfo = new CarInfo(mileage);
-            _target.Write(carInfo);
+            _target.Save(carInfo);
         }
     }
 }

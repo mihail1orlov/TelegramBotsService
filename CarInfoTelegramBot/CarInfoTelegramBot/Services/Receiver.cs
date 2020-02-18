@@ -1,12 +1,20 @@
-﻿using System;
+﻿using CarInfoCommon.Models;
 
 namespace CarInfoTelegramBot.Services
 {
     public class Receiver : IReceiver
     {
-        public void Message()
+        private readonly IRepository _repository;
+
+        public Receiver(IRepository repository)
         {
-            Console.WriteLine("Receive the message!");
+            _repository = repository;
+        }
+
+        public bool Message(CarInfo carInfo)
+        {
+            _repository.Save(carInfo);
+            return true;
         }
     }
 }

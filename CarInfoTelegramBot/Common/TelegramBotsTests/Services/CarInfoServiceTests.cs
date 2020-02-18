@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using CarInfoTelegramBot.Services;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
 using Telegram.Bot;
 using TelegramBots.Services;
@@ -15,7 +16,8 @@ namespace TelegramBotsTests.Services
         public void Init()
         {
             _telegramBotClient = Substitute.For<ITelegramBotClient>();
-            _target = new CarInfoService(_telegramBotClient);
+            var receiver = Substitute.For<IReceiver>();
+            _target = new CarInfoService(_telegramBotClient, receiver);
         }
 
         [TestMethod]
