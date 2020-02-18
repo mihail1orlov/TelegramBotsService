@@ -1,5 +1,4 @@
-﻿using System;
-using CarInfoCommon.Models;
+﻿using CarInfoCommon.Models;
 using CarInfoTelegramBot.Services;
 using ServiceCommon;
 using Telegram.Bot;

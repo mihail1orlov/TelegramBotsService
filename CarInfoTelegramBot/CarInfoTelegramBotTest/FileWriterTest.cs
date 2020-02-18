@@ -1,5 +1,5 @@
-﻿using CarInfoTelegramBot;
-using CarInfoTelegramBot.Model;
+﻿using CarInfoCommon.Models;
+using CarInfoTelegramBot.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CarInfoTelegramBotTest
