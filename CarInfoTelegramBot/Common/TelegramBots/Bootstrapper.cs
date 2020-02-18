@@ -6,6 +6,8 @@ namespace TelegramBots
     {
         public static void RegisterTypes(ContainerBuilder builder)
         {
+            CarInfoTelegramBot.Bootstrapper.RegisterTypes(builder);
+
             builder.RegisterType<TelegramBotsFactory>().As<ITelegramBotsFactory>();
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using CarInfoTelegramBot.Services;
 using ServiceCommon;
 using Telegram.Bot;
 using Telegram.Bot.Args;
@@ -9,10 +10,13 @@ namespace TelegramBots.Services
     public class CarInfoService : IService
     {
         private readonly ITelegramBotClient _telegramBotClient;
+        private readonly IReceiver _receiver;
 
-        public CarInfoService(ITelegramBotClient telegramBotClient)
+        public CarInfoService(ITelegramBotClient telegramBotClient,
+            IReceiver receiver)
         {
             _telegramBotClient = telegramBotClient;
+            _receiver = receiver;
         }
 
         public void Start()
@@ -36,6 +40,8 @@ namespace TelegramBots.Services
             {
                 return;
             }
+
+            _receiver.Message();
 
             User user = e.Message.From;
 
