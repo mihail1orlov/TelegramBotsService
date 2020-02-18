@@ -11,12 +11,15 @@ namespace TelegramBots.Services
     {
         private readonly ITelegramBotClient _telegramBotClient;
         private readonly IReceiver _receiver;
+        private readonly ITransmitter _transmitter;
 
         public CarInfoService(ITelegramBotClient telegramBotClient,
-            IReceiver receiver)
+            IReceiver receiver,
+            ITransmitter transmitter)
         {
             _telegramBotClient = telegramBotClient;
             _receiver = receiver;
+            _transmitter = transmitter;
         }
 
         public void Start()
@@ -38,11 +41,19 @@ namespace TelegramBots.Services
             var text = e?.Message?.Text;
             if (text == null)
             {
-                return;
-            }   
+                string answer = nameof(answer);
+                await _telegramBotClient.SendTextMessageAsync(e.Message.Chat.Id, answer)
+                    .ConfigureAwait(false);
+            }
 
             string s;
-            if (int.TryParse(text, out var distance) && _receiver.Message(new CarInfo(distance)))
+
+            if (string.Equals(text, "start"))
+            {
+                var carInfo = _transmitter.Load();
+                s = "Mileage: " + carInfo.Mileage;
+            } 
+            else if (int.TryParse(text, out var distance) && _receiver.Message(new CarInfo(distance)))
             {
                 s = "Your data was save";
             }

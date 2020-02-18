@@ -8,6 +8,7 @@ namespace CarInfoTelegramBot
         public static void RegisterTypes(ContainerBuilder builder)
         {
             builder.RegisterType<Receiver>().As<IReceiver>();
+            builder.RegisterType<Transmitter>().As<ITransmitter>();
             builder.RegisterType<FileWriter>().As<IRepository>();
         }
     }

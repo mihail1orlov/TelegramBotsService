@@ -2,9 +2,8 @@
 
 namespace CarInfoTelegramBot.Services
 {
-    public interface IRepository
+    public interface ITransmitter
     {
-        void Save(CarInfo carInfo);
         CarInfo Load();
     }
 }
