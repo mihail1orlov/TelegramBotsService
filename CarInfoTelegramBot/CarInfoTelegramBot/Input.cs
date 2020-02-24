@@ -10,6 +10,7 @@ namespace CarInfoTelegramBot
         public void SetMileage(int mileage)
         {
             _mileage = mileage;
+            
             _dateTime = DateTime.Now;
         }
     }
