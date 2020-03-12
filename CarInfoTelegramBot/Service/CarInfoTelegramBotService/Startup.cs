@@ -1,30 +1,28 @@
 ﻿using System;
 using System.ServiceProcess;
 using Autofac;
+using Autofac.Extras.CommonServiceLocator;
 using CarInfoTelegramBotService.Configuration;
+using Microsoft.Practices.ServiceLocation;
 using TelegramBots;
 
 namespace CarInfoTelegramBotService
 {
     public class Startup
     {
-        private static IContainer Container { get; set; }
         public static void Main(string[] args)
         {
             // This is global error handler
             AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;
 
-            Container = Bootstrapper.GetDependencyInjectionContainer();
+            IContainer container = CreateContainer();
 
-            // Create the scope
-            // use it, then dispose of the scope.
-            using var scope = Container.BeginLifetimeScope();
-
-            // resolve your ITelegramBotsFactory
-            var factory = scope.Resolve<ITelegramBotsFactory>();
+            var serviceLocator = new AutofacServiceLocator(container);
+            ServiceLocator.SetLocatorProvider(() => serviceLocator);
+            var factory = ServiceLocator.Current.GetInstance<ITelegramBotsFactory>();
 
             // This is configuration provider
-            var config = scope.Resolve<ICarInfoConfiguration>();
+            var config = ServiceLocator.Current.GetInstance<ICarInfoConfiguration>();
             
             var svc = new MainService(new[]
             {
@@ -42,6 +40,14 @@ namespace CarInfoTelegramBotService
             {
                 ServiceBase.Run(svc);
             }
+        }
+
+        private static IContainer CreateContainer()
+        {
+            // Create your builder.
+            var builder = new ContainerBuilder();
+            new Bootstrapper().BootStrap(builder);
+            return builder.Build();
         }
 
         private static void CurrentDomainOnUnhandledException(object sender, UnhandledExceptionEventArgs args)

@@ -5,7 +5,7 @@ namespace CarInfoTelegramBot
 {
     public class Bootstrapper
     {
-        public static void RegisterTypes(ContainerBuilder builder)
+        public void BootStrap(ContainerBuilder builder)
         {
             builder.RegisterType<Receiver>().As<IReceiver>();
             builder.RegisterType<Transmitter>().As<ITransmitter>();

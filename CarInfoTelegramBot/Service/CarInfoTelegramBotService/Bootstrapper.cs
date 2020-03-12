@@ -2,17 +2,24 @@
 using CarInfoTelegramBotService.Configuration;
 using CarInfoTelegramBotService.Constants;
 using Microsoft.Extensions.Configuration;
+using MongoDB.Driver;
 
 namespace CarInfoTelegramBotService
 {
     public class Bootstrapper
     {
-        public static IContainer GetDependencyInjectionContainer()
+        public void BootStrap(ContainerBuilder builder)
         {
-            // Create your builder.
-            var builder = new ContainerBuilder();
+            new TelegramBots.Bootstrapper().BootStrap(builder);
 
-            TelegramBots.Bootstrapper.RegisterTypes(builder);
+            builder.RegisterInstance(new MongoClient(
+                    new MongoClientSettings
+                    {
+                        Server = new MongoServerAddress(
+                            "localhost",
+                            int.Parse("27017"))
+                    }))
+                .As<IMongoClient>().SingleInstance();
 
             // Usually you're only interested in exposing the type
             // via its interface:
@@ -22,8 +29,6 @@ namespace CarInfoTelegramBotService
             // However, if you want BOTH services (not as common)
             // you can say so:
             builder.RegisterType<CarInfoConfiguration>().AsSelf().As<ICarInfoConfiguration>();
-
-            return builder.Build();
         }
     }
 }

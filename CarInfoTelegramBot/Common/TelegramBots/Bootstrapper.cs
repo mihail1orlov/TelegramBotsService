@@ -4,10 +4,9 @@ namespace TelegramBots
 {
     public class Bootstrapper
     {
-        public static void RegisterTypes(ContainerBuilder builder)
+        public void BootStrap(ContainerBuilder builder)
         {
-            CarInfoTelegramBot.Bootstrapper.RegisterTypes(builder);
-
+            new CarInfoTelegramBot.Bootstrapper().BootStrap(builder);
             builder.RegisterType<TelegramBotsFactory>().As<ITelegramBotsFactory>();
         }
     }

@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Autofac;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CarInfoTelegramBotServiceTests
 {
@@ -8,7 +9,7 @@ namespace CarInfoTelegramBotServiceTests
         [TestMethod]
         public void GetDependencyInjectionContainerTest()
         {
-            CarInfoTelegramBotService.Bootstrapper.GetDependencyInjectionContainer();
+            CarInfoTelegramBotService.Bootstrapper.BootStrap(new ContainerBuilder());
         }
     }
 }
