@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
 using ServiceCommon;
 
-namespace CarInfoTelegramBotServiceTests
+namespace ServiceTests
 {
     [TestClass]
     public class MainServiceTests

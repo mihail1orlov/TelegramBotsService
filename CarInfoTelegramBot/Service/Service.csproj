@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Common\ServiceCommon\ServiceCommon.csproj" />
-    <ProjectReference Include="..\..\Common\TelegramBots\TelegramBots.csproj" />
+    <ProjectReference Include="..\Bots\TelegramBots\TelegramBots.csproj" />
+    <ProjectReference Include="..\Services\ServiceCommon\ServiceCommon.csproj" />
   </ItemGroup>
 
   <ItemGroup>

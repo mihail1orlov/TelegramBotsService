@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\CarInfoTelegramBot\CarInfoTelegramBot.csproj" />
-    <ProjectReference Include="..\ServiceCommon\ServiceCommon.csproj" />
+    <ProjectReference Include="..\..\Services\ServiceCommon\ServiceCommon.csproj" />
+    <ProjectReference Include="..\CarInfo\CarInfoTelegramBot\CarInfoTelegramBot.csproj" />
   </ItemGroup>
 
 </Project>

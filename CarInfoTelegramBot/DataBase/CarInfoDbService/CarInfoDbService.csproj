@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Common\CarInfoCommon\CarInfoCommon.csproj" />
-    <ProjectReference Include="..\..\Common\MongoDbCommon\MongoDbCommon.csproj" />
+    <ProjectReference Include="..\..\Bots\CarInfo\Common\CarInfoCommon\CarInfoCommon.csproj" />
+    <ProjectReference Include="..\MongoDbCommon\MongoDbCommon.csproj" />
   </ItemGroup>
 
 </Project>

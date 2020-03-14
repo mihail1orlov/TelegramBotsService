@@ -3,7 +3,7 @@ using CarInfoCommon.Models;
 using MongoDB.Driver;
 using MongoDbCommon;
 
-namespace CarInfoTelegramBotDbService
+namespace CarInfoDbService
 {
     /// <summary>
     /// Describes repository for carInfo

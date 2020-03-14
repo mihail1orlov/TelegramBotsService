@@ -1,6 +1,6 @@
 ﻿using MongoDbCommon;
 
-namespace CarInfoTelegramBotDbService
+namespace CarInfoDbService
 {
     /// <summary>
     /// Describes required fields for the connection to the mongo DB

@@ -1,5 +1,6 @@
 ﻿using CarInfoTelegramBotService;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Service;
 
 namespace CarInfoTelegramBotServiceTests
 {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using CarInfoCommon.Models;
 
-namespace CarInfoTelegramBotDbService
+namespace CarInfoDbService
 {
     /// <summary>
     /// Declares functionality for the repository storing car info

@@ -2,11 +2,12 @@
 using System.ServiceProcess;
 using Autofac;
 using Autofac.Extras.CommonServiceLocator;
+using CarInfoTelegramBotService;
 using CarInfoTelegramBotService.Configuration;
 using CommonServiceLocator;
 using TelegramBots;
 
-namespace CarInfoTelegramBotService
+namespace Service
 {
     public class Startup
     {

@@ -1,6 +1,6 @@
 ﻿using Autofac;
+using CarInfoDbService;
 using CarInfoTelegramBot.Services;
-using CarInfoTelegramBotDbService;
 
 namespace CarInfoTelegramBot
 {

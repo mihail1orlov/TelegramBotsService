@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MongoDbCommon\MongoDbCommon.csproj" />
+    <ProjectReference Include="..\..\..\..\DataBase\MongoDbCommon\MongoDbCommon.csproj" />
   </ItemGroup>
 
 </Project>

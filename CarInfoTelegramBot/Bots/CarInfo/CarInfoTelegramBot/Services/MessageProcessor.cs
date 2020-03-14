@@ -1,5 +1,5 @@
 ﻿using CarInfoCommon.Models;
-using CarInfoTelegramBotDbService;
+using CarInfoDbService;
 
 namespace CarInfoTelegramBot.Services
 {

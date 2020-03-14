@@ -1,12 +1,12 @@
 ﻿using Autofac;
-using CarInfoTelegramBotDbService;
+using CarInfoDbService;
 using CarInfoTelegramBotService.Configuration;
 using CarInfoTelegramBotService.Constants;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 using MongoDbCommon;
 
-namespace CarInfoTelegramBotService
+namespace Service
 {
     public class Bootstrapper
     {
