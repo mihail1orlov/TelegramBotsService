@@ -3,7 +3,7 @@ using System.ServiceProcess;
 using Autofac;
 using Autofac.Extras.CommonServiceLocator;
 using CarInfoTelegramBotService.Configuration;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using TelegramBots;
 
 namespace CarInfoTelegramBotService

@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using CarInfoTelegramBotService;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CarInfoTelegramBotServiceTests
@@ -6,10 +7,18 @@ namespace CarInfoTelegramBotServiceTests
     [TestClass]
     public class BootstrapperTests
     {
+        private Bootstrapper _target;
+
+        [TestInitialize]
+        public void Init()
+        {
+            _target = new Bootstrapper();
+        }
+
         [TestMethod]
         public void GetDependencyInjectionContainerTest()
         {
-            CarInfoTelegramBotService.Bootstrapper.BootStrap(new ContainerBuilder());
+            _target.BootStrap(new ContainerBuilder());
         }
     }
 }
