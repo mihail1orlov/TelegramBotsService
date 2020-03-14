@@ -23,10 +23,11 @@ namespace CarInfoCommon.Models
 
                 return _id;
             }
+
             set => _id = value;
         }
 
-        public int Mileage { get; }
+        public int Mileage { get; set; }
 
         public CarInfo(int mileage)
         {

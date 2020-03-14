@@ -1,5 +1,4 @@
-﻿using CarInfoCommon.Models;
-using CarInfoTelegramBot.Services;
+﻿using CarInfoTelegramBot.Services;
 using ServiceCommon;
 using Telegram.Bot;
 using Telegram.Bot.Args;
@@ -53,7 +52,9 @@ namespace TelegramBots.Services
             } 
             else if (int.TryParse(text, out var distance))
             {
-                _messageProcessor.Save(new CarInfo(distance));
+                var carInfo = _messageProcessor.Load("72B0DF11A044482EB1568BFA289E6800");
+                carInfo.Mileage = distance;
+                _messageProcessor.Save(carInfo);
                 s = "Your data was save";
             }
             else
