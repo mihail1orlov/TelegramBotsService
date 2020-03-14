@@ -7,20 +7,17 @@ namespace TelegramBots
 {
     public class TelegramBotsFactory : ITelegramBotsFactory
     {
-        private readonly IReceiver _receiver;
-        private readonly ITransmitter _transmitter;
+        private readonly IMessageProcessor _messageProcessor;
 
-        public TelegramBotsFactory(IReceiver receiver,
-            ITransmitter transmitter)
+        public TelegramBotsFactory(IMessageProcessor messageProcessor)
         {
-            _receiver = receiver;
-            _transmitter = transmitter;
+            _messageProcessor = messageProcessor;
         }
 
         public IService GetCarInfoService(string token)
         {
             // todo: here you need to do refactoring, it is better to use the DI container
-            return new CarInfoService(new TelegramBotClient(token), _receiver, _transmitter);
+            return new CarInfoService(new TelegramBotClient(token), _messageProcessor);
         }
     }
 }

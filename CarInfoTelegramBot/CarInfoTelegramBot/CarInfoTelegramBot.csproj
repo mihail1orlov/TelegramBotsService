@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Common\CarInfoCommon\CarInfoCommon.csproj" />
+    <ProjectReference Include="..\Service\CarInfoTelegramBotDbService\CarInfoTelegramBotDbService.csproj" />
   </ItemGroup>
 
 </Project>

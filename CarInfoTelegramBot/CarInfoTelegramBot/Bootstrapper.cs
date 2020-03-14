@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using CarInfoTelegramBot.Services;
+using CarInfoTelegramBotDbService;
 
 namespace CarInfoTelegramBot
 {
@@ -7,9 +8,8 @@ namespace CarInfoTelegramBot
     {
         public void BootStrap(ContainerBuilder builder)
         {
-            builder.RegisterType<Receiver>().As<IReceiver>();
-            builder.RegisterType<Transmitter>().As<ITransmitter>();
-            builder.RegisterType<FileWriter>().As<IRepository>();
+            builder.RegisterType<MessageProcessor>().As<IMessageProcessor>();
+            builder.RegisterType<CarInfoRepository>().As<ICarInfoRepository>();
         }
     }
 }

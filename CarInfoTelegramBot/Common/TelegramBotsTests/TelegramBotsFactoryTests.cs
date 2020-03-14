@@ -13,9 +13,8 @@ namespace TelegramBotsTests
         [TestInitialize]
         public void Init()
         {
-            var receiver = Substitute.For<IReceiver>();
-            var transmitter = Substitute.For<ITransmitter>();
-            _target = new TelegramBotsFactory(receiver, transmitter);
+            var messageProcessor = Substitute.For<IMessageProcessor>();
+            _target = new TelegramBotsFactory(messageProcessor);
         }
 
         [TestMethod]

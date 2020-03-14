@@ -10,16 +10,13 @@ namespace TelegramBots.Services
     public class CarInfoService : IService
     {
         private readonly ITelegramBotClient _telegramBotClient;
-        private readonly IReceiver _receiver;
-        private readonly ITransmitter _transmitter;
+        private readonly IMessageProcessor _messageProcessor;
 
         public CarInfoService(ITelegramBotClient telegramBotClient,
-            IReceiver receiver,
-            ITransmitter transmitter)
+            IMessageProcessor messageProcessor)
         {
             _telegramBotClient = telegramBotClient;
-            _receiver = receiver;
-            _transmitter = transmitter;
+            _messageProcessor = messageProcessor;
         }
 
         public void Start()
@@ -50,11 +47,13 @@ namespace TelegramBots.Services
 
             if (string.Equals(text, "start"))
             {
-                var carInfo = _transmitter.Load();
+                // todo: fake
+                var carInfo = _messageProcessor.Load("72B0DF11A044482EB1568BFA289E6800");
                 s = "Mileage: " + carInfo.Mileage;
             } 
-            else if (int.TryParse(text, out var distance) && _receiver.Message(new CarInfo(distance)))
+            else if (int.TryParse(text, out var distance))
             {
+                _messageProcessor.Save(new CarInfo(distance));
                 s = "Your data was save";
             }
             else

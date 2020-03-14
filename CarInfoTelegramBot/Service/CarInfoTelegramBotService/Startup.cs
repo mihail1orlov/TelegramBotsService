@@ -54,7 +54,7 @@ namespace CarInfoTelegramBotService
         {
             const string method = "UnhandledExceptionHandler";
             var ex = (Exception)args.ExceptionObject;
-            Console.WriteLine(ex == null ? "Error!" : $"{method}\n{ex}");
+            Console.WriteLine($"{method}\n{ex}");
         }
     }
 }

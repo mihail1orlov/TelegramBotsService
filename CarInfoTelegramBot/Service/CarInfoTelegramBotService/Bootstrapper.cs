@@ -1,8 +1,10 @@
 ﻿using Autofac;
+using CarInfoTelegramBotDbService;
 using CarInfoTelegramBotService.Configuration;
 using CarInfoTelegramBotService.Constants;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
+using MongoDbCommon;
 
 namespace CarInfoTelegramBotService
 {
@@ -21,8 +23,9 @@ namespace CarInfoTelegramBotService
                     }))
                 .As<IMongoClient>().SingleInstance();
 
-            // Usually you're only interested in exposing the type
-            // via its interface:
+            builder.RegisterType<MongoDbConnectionSettings>().As<IConnectionSettings>().SingleInstance();
+
+            // Usually you're only interested in exposing the type via its interface:
             builder.RegisterType<FileConstants>().As<IFileConstants>();
             builder.RegisterType<ConfigurationBuilder>().As<IConfigurationBuilder>();
 

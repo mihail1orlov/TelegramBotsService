@@ -16,9 +16,8 @@ namespace TelegramBotsTests.Services
         public void Init()
         {
             _telegramBotClient = Substitute.For<ITelegramBotClient>();
-            var receiver = Substitute.For<IReceiver>();
-            var transmitter = Substitute.For<ITransmitter>();
-            _target = new CarInfoService(_telegramBotClient, receiver, transmitter);
+            var messageProcessor = Substitute.For<IMessageProcessor>();
+            _target = new CarInfoService(_telegramBotClient, messageProcessor);
         }
 
         [TestMethod]
