@@ -1,10 +1,10 @@
 ﻿using Autofac;
 using CarInfoDbService;
-using CarInfoTelegramBotService.Configuration;
-using CarInfoTelegramBotService.Constants;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 using MongoDbCommon;
+using Service.Configuration;
+using Service.Constants;
 
 namespace Service
 {

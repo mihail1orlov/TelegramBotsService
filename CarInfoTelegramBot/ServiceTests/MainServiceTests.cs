@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using CarInfoTelegramBotService;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
+using Service;
 using ServiceCommon;
 
 namespace ServiceTests

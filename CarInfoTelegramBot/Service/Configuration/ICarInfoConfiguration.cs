@@ -1,4 +1,4 @@
-﻿namespace CarInfoTelegramBotService.Configuration
+﻿namespace Service.Configuration
 {
     public interface ICarInfoConfiguration
     {

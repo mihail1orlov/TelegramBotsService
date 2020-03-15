@@ -1,4 +1,4 @@
-﻿namespace CarInfoTelegramBotService.Constants
+﻿namespace Service.Constants
 {
     public interface IFileConstants
     {

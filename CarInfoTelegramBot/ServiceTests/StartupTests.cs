@@ -1,8 +1,7 @@
-﻿using CarInfoTelegramBotService;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Service;
 
-namespace CarInfoTelegramBotServiceTests
+namespace ServiceTests
 {
     [TestClass]
     public class StartupTests

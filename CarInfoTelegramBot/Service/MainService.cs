@@ -2,7 +2,7 @@
 using System.ServiceProcess;
 using ServiceCommon;
 
-namespace CarInfoTelegramBotService
+namespace Service
 {
     public class MainService : ServiceBase
     {

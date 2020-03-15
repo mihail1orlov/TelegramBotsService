@@ -1,8 +1,8 @@
-﻿using CarInfoTelegramBotService.Configuration;
-using CarInfoTelegramBotService.Constants;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
+using Service.Configuration;
+using Service.Constants;
 
 namespace CarInfoTelegramBotServiceTests.Configuration
 {

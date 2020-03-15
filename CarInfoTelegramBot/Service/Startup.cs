@@ -2,9 +2,8 @@
 using System.ServiceProcess;
 using Autofac;
 using Autofac.Extras.CommonServiceLocator;
-using CarInfoTelegramBotService;
-using CarInfoTelegramBotService.Configuration;
 using CommonServiceLocator;
+using Service.Configuration;
 using TelegramBots;
 
 namespace Service

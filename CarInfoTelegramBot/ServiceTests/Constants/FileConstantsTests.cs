@@ -1,5 +1,5 @@
-﻿using CarInfoTelegramBotService.Constants;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Service.Constants;
 
 namespace ServiceTests.Constants
 {

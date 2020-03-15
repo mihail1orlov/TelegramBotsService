@@ -1,7 +1,7 @@
-﻿using CarInfoTelegramBotService.Constants;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
+using Service.Constants;
 
-namespace CarInfoTelegramBotService.Configuration
+namespace Service.Configuration
 {
     public class CarInfoConfiguration : ICarInfoConfiguration
     {
