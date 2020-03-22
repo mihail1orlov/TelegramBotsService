@@ -9,6 +9,7 @@ namespace Service
     {
         public void BootStrap(ContainerBuilder builder)
         {
+            new LoggerCommon.Bootstrapper().BootStrap(builder);
             new TelegramBots.Bootstrapper().BootStrap(builder);
 
             // Usually you're only interested in exposing the type via its interface:

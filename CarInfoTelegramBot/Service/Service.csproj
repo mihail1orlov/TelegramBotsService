@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Bots\TelegramBots\TelegramBots.csproj" />
+    <ProjectReference Include="..\Common\LoggerCommon\LoggerCommon.csproj" />
     <ProjectReference Include="..\Services\ServiceCommon\ServiceCommon.csproj" />
   </ItemGroup>
 
@@ -25,6 +26,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="install.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="uninstall.bat">
