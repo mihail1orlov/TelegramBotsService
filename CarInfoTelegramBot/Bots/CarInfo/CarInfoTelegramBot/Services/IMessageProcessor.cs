@@ -1,10 +1,9 @@
-﻿using CarInfoCommon.Models;
+﻿using System.Threading.Tasks;
 
 namespace CarInfoTelegramBot.Services
 {
     public interface IMessageProcessor
     {
-        void Save(CarInfo carInfo);
-        CarInfo Load(string id);
+        Task<string> Process(string text, long id);
     }
 }

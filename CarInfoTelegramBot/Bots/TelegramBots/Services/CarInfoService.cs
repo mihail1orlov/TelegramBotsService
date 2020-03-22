@@ -35,39 +35,11 @@ namespace TelegramBots.Services
         private async void OnMessage(object sender, MessageEventArgs e)
         {
             var text = e?.Message?.Text;
-            if (text == null)
-            {
-                string answer = nameof(answer);
-                await _telegramBotClient.SendTextMessageAsync(e.Message.Chat.Id, answer)
-                    .ConfigureAwait(false);
-            }
-
-            string s;
-
-            if (string.Equals(text, "start"))
-            {
-                // todo: fake
-                var carInfo = _messageProcessor.Load("72B0DF11A044482EB1568BFA289E6800");
-                s = "Mileage: " + carInfo.Mileage;
-            } 
-            else if (int.TryParse(text, out var distance))
-            {
-                var carInfo = _messageProcessor.Load("72B0DF11A044482EB1568BFA289E6800");
-                carInfo.Mileage = distance;
-                _messageProcessor.Save(carInfo);
-                s = "Your data was save";
-            }
-            else
-            {
-                s = "Error!\nInvalid input format";
-            }
+            var id = e.Message.Chat.Id;
 
             User user = e.Message.From;
-
-            //var s = $"Hello! {user.FirstName} {user.LastName}.\nYou said: '{text}'";
-            //Console.Write(s);
-
-            await _telegramBotClient.SendTextMessageAsync(e.Message.Chat.Id, s)
+            var message = await _messageProcessor.Process(text, id);
+            await _telegramBotClient.SendTextMessageAsync(id, message)
                 .ConfigureAwait(false);
         }
     }
