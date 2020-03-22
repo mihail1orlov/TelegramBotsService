@@ -24,7 +24,7 @@ namespace Service
             ServiceLocator.SetLocatorProvider(() => serviceLocator);
 
             _logger = ServiceLocator.Current.GetInstance<ILogger>();
-            _logger.Info($"{nameof(Startup)} - starting");
+            _logger.Info($"{nameof(Startup)}|starting");
 
             var factory = ServiceLocator.Current.GetInstance<ITelegramBotsFactory>();
 
@@ -39,17 +39,17 @@ namespace Service
             if (Array.IndexOf(args, "console") != -1 || Array.IndexOf(args, "c") != -1)
             {
                 svc.StartSvc();
-                _logger.Info($"{nameof(Startup)} - started in console mode");
+                _logger.Info($"{nameof(Startup)}|started in console mode");
                 Console.WriteLine("Press a key for exit...");
                 Console.ReadKey(true);
                 svc.StopSvc();
-                _logger.Info($"{nameof(Startup)} - stoped");
+                _logger.Info($"{nameof(Startup)}|stoped");
             }
             else
             {
-                _logger.Info($"{nameof(Startup)} - started in service mode");
+                _logger.Info($"{nameof(Startup)}|started in service mode");
                 ServiceBase.Run(svc);
-                _logger.Info($"{nameof(Startup)} - stoped");
+                _logger.Info($"{nameof(Startup)}|stoped");
             }
             
             _logger.Shutdown();

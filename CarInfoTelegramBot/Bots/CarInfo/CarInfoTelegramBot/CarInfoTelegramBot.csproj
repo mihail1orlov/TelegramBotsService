@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\LoggerCommon\LoggerCommon.csproj" />
     <ProjectReference Include="..\..\..\DataBase\CarInfoDbService\CarInfoDbService.csproj" />
     <ProjectReference Include="..\Common\CarInfoCommon\CarInfoCommon.csproj" />
   </ItemGroup>

@@ -1,20 +1,24 @@
 ﻿using System.Threading.Tasks;
 using CarInfoCommon.Models;
 using CarInfoDbService;
+using LoggerCommon;
 
 namespace CarInfoTelegramBot.Services
 {
     public class MessageProcessor : IMessageProcessor
     {
         private readonly ICarInfoRepository _carInfoRepository;
+        private readonly ILogger _logger;
 
-        public MessageProcessor(ICarInfoRepository carInfoRepository)
+        public MessageProcessor(ICarInfoRepository carInfoRepository, ILogger logger)
         {
             _carInfoRepository = carInfoRepository;
+            _logger = logger;
         }
 
         public async Task<string> Process(string text, long id)
         {
+            _logger.Info($"{nameof(Process)}|start");
             string message;
 
             if (string.Equals(text, "start"))
@@ -35,6 +39,7 @@ namespace CarInfoTelegramBot.Services
                 message = "Error!\nInvalid input format";
             }
 
+            _logger.Info($"{nameof(Process)}|{nameof(message)}: {message}");
             return message;
         }
 
