@@ -169,6 +169,7 @@ rcf/
 # Microsoft Azure ApplicationInsights config file
 ApplicationInsights.config
 config.json
+config_.json
 
 # Windows Store app package directory
 AppPackages/
