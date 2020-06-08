@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using BotCommon;
 using CarInfoCommon.Models;
 using CarInfoDbService;
 using LoggerCommon;
@@ -21,15 +22,22 @@ namespace CarInfoTelegramBot.Services
             _logger.Info($"{nameof(Process)}|start");
             string message;
 
+            var carInfo = Load("72B0DF11A044482EB1568BFA289E6800");
+            if (carInfo == null)
+            {
+                carInfo = new CarInfo(44);
+                Save(carInfo);
+            }
+
             if (string.Equals(text, "start"))
             {
                 // todo: fake
-                var carInfo = Load("72B0DF11A044482EB1568BFA289E6800");
+                carInfo = Load("72B0DF11A044482EB1568BFA289E6800");
                 message = "Mileage: " + carInfo.Mileage;
             }
             else if (int.TryParse(text, out var distance))
             {
-                var carInfo = Load("72B0DF11A044482EB1568BFA289E6800");
+                carInfo = Load("72B0DF11A044482EB1568BFA289E6800");
                 carInfo.Mileage = distance;
                 Save(carInfo);
                 message = "Your data was save";

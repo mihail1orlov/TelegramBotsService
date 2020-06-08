@@ -164,7 +164,7 @@ namespace MongoDbCommon
         }
 
         /// <summary>
-        /// Deletes a single enity.
+        /// Deletes a single entity.
         /// </summary>
         /// <param name="id">The entity identifier</param>
         public void Delete(TIdentifier id)

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="5.1.2" />
+    <PackageReference Include="Castle.Core" Version="4.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DataBase\EnglishDbService\EnglishDbService.csproj" />
+    <ProjectReference Include="..\..\Common\BotCommon\BotCommon.csproj" />
+    <ProjectReference Include="..\Common\EnglishCommon\EnglishCommon.csproj" />
+  </ItemGroup>
+
+</Project>

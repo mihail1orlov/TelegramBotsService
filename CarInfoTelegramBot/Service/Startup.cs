@@ -29,11 +29,14 @@ namespace Service
             var factory = ServiceLocator.Current.GetInstance<ITelegramBotsFactory>();
 
             // This is configuration provider
-            var config = ServiceLocator.Current.GetInstance<ICarInfoConfiguration>();
-            
+            var carInfoConfig = ServiceLocator.Current.GetInstance<ICarInfoConfiguration>();
+            var englishConfig = ServiceLocator.Current.GetInstance<IEnglishConfiguration>();
+
+
             var svc = new MainService(new[]
             {
-                factory.GetCarInfoService(config.Token)
+                factory.GetCarInfoService(carInfoConfig.Token),
+                factory.GetEnglishService(englishConfig.Token),
             });
 
             if (Array.IndexOf(args, "console") != -1 || Array.IndexOf(args, "c") != -1)

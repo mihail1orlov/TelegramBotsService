@@ -1,4 +1,4 @@
-﻿using CarInfoTelegramBot.Services;
+﻿using BotCommon;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
 using TelegramBots;

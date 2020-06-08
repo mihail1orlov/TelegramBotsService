@@ -1,4 +1,4 @@
-﻿using CarInfoTelegramBot.Services;
+﻿using BotCommon;
 using ServiceCommon;
 using Telegram.Bot;
 using TelegramBots.Services;
@@ -18,6 +18,11 @@ namespace TelegramBots
         {
             // todo: here you need to do refactoring, it is better to use the DI container
             return new CarInfoService(new TelegramBotClient(token), _messageProcessor);
+        }
+
+        public IService GetEnglishService(string token)
+        {
+            return new EnglishService(new TelegramBotClient(token), _messageProcessor);
         }
     }
 }

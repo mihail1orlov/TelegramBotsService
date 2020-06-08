@@ -1,4 +1,5 @@
-﻿using BotCommon;
+﻿using System;
+using BotCommon;
 using ServiceCommon;
 using Telegram.Bot;
 using Telegram.Bot.Args;
@@ -6,12 +7,12 @@ using Telegram.Bot.Types;
 
 namespace TelegramBots.Services
 {
-    public class CarInfoService : IService
+    public class EnglishService : Exception, IService
     {
         private readonly ITelegramBotClient _telegramBotClient;
         private readonly IMessageProcessor _messageProcessor;
 
-        public CarInfoService(ITelegramBotClient telegramBotClient,
+        public EnglishService(ITelegramBotClient telegramBotClient,
             IMessageProcessor messageProcessor)
         {
             _telegramBotClient = telegramBotClient;

@@ -3,16 +3,16 @@ using Service.Constants;
 
 namespace Service.Configuration
 {
-    public class CarInfoConfiguration : ICarInfoConfiguration
+    public class EnglishConfiguration : IEnglishConfiguration
     {
         private readonly IConfigurationRoot _config;
 
-        public CarInfoConfiguration(IConfigurationBuilder configurationBuilder, IFileConstants fileConstants)
+        public EnglishConfiguration(IConfigurationBuilder configurationBuilder, IFileConstants fileConstants)
         {
             // This is configuration provider
             _config = configurationBuilder.AddJsonFile(fileConstants.ConfigJson).Build();
         }
 
-        public string Token => _config["CarInfoToken"];
+        public string Token => _config["EnglishToken"];
     }
 }

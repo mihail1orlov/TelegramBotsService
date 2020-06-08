@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace CarInfoTelegramBot.Services
+namespace BotCommon
 {
     public interface IMessageProcessor
     {

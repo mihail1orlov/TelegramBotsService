@@ -19,6 +19,7 @@ namespace Service
             // However, if you want BOTH services (not as common)
             // you can say so:
             builder.RegisterType<CarInfoConfiguration>().AsSelf().As<ICarInfoConfiguration>();
+            builder.RegisterType<EnglishConfiguration>().AsSelf().As<IEnglishConfiguration>();
         }
     }
 }
