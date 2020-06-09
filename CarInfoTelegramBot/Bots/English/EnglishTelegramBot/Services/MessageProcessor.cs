@@ -2,9 +2,9 @@
 using System.Net;
 using System.Threading.Tasks;
 using BotCommon;
-using Castle.Core.Logging;
 using EnglishCommon.Models;
 using EnglishDbService;
+using LoggerCommon;
 
 namespace EnglishTelegramBot.Services
 {
@@ -13,10 +13,10 @@ namespace EnglishTelegramBot.Services
         private readonly IEnglishRepository _englishRepository;
         private readonly ILogger _logger;
 
-        public MessageProcessor(IEnglishRepository englishRepository/*, ILogger logger*/)
+        public MessageProcessor(IEnglishRepository englishRepository, ILogger logger)
         {
             _englishRepository = englishRepository;
-           // _logger = logger;
+           _logger = logger;
         }
 
         public async Task<string> Process(string text, long id)
