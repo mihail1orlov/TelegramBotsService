@@ -23,7 +23,7 @@ namespace EnglishTelegramBot.Services
             _logger.Info($"{nameof(Process)}|start");
             var message = string.Empty;
 
-            TranslateText("стол", "ru|en");
+            TranslateText("стул", "ru|en");
             _logger.Info($"{nameof(Process)}|{nameof(message)}: {message}");
             return message;
         }
