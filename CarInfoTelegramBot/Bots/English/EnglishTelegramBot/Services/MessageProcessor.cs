@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Net;
+using System.Threading.Tasks;
 using BotCommon;
 using Castle.Core.Logging;
 using EnglishCommon.Models;
@@ -6,40 +8,23 @@ using EnglishDbService;
 
 namespace EnglishTelegramBot.Services
 {
-    public class EnglishMessageProcessor : IMessageProcessor
+    public class MessageProcessor : IMessageProcessor
     {
-        private readonly EnglishRepository _englishRepository;
+        private readonly IEnglishRepository _englishRepository;
         private readonly ILogger _logger;
 
-        public EnglishMessageProcessor(EnglishRepository EnglishRepository, ILogger logger)
+        public MessageProcessor(IEnglishRepository englishRepository/*, ILogger logger*/)
         {
-            _englishRepository = EnglishRepository;
-            _logger = logger;
+            _englishRepository = englishRepository;
+           // _logger = logger;
         }
 
         public async Task<string> Process(string text, long id)
         {
             _logger.Info($"{nameof(Process)}|start");
-            string message;
+            var message = string.Empty;
 
-            if (string.Equals(text, "start"))
-            {
-                // todo: fake
-                var english = Load("72B0DF11A044482EB1568BFA289E6800");
-                message = "Mileage: " + english.Mileage;
-            }
-            else if (int.TryParse(text, out var distance))
-            {
-                var english = Load("72B0DF11A044482EB1568BFA289E6800");
-                english.Mileage = distance;
-                Save(english);
-                message = "Your data was save";
-            }
-            else
-            {
-                message = "Error!\nInvalid input format";
-            }
-
+            TranslateText("стол", "ru|en");
             _logger.Info($"{nameof(Process)}|{nameof(message)}: {message}");
             return message;
         }
@@ -53,6 +38,26 @@ namespace EnglishTelegramBot.Services
         {
             var english = _englishRepository.GetEnglishExercise(id);
             return english;
+        }
+
+        private string TranslateText(string input, string languagePair)
+        {
+            string url = $"http://www.google.com/translate_t?hl=en&ie=UTF8&text={input}&langpair={languagePair}";
+
+            WebClient webClient = new WebClient
+            {
+                Encoding = System.Text.Encoding.UTF8
+            };
+
+            string result = webClient.DownloadString(url);
+
+            // todo: StringComparison.InvariantCulture need to clarify
+            result = result.Substring(result.IndexOf("id=result_box", StringComparison.Ordinal) + 22,
+                result.IndexOf("id=result_box", StringComparison.Ordinal) + 500);
+
+            result = result.Substring(0, result.IndexOf("</div", StringComparison.Ordinal));
+
+            return result;
         }
     }
 }

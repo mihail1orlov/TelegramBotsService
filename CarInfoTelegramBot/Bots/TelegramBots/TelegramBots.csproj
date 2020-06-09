@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Services\ServiceCommon\ServiceCommon.csproj" />
     <ProjectReference Include="..\CarInfo\CarInfoTelegramBot\CarInfoTelegramBot.csproj" />
+    <ProjectReference Include="..\English\EnglishTelegramBot\EnglishTelegramBot.csproj" />
   </ItemGroup>
 
 </Project>
