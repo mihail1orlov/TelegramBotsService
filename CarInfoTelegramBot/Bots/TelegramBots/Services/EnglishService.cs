@@ -1,9 +1,8 @@
 ﻿using System;
-using BotCommon;
+using EnglishTelegramBot.Services;
 using ServiceCommon;
 using Telegram.Bot;
 using Telegram.Bot.Args;
-using Telegram.Bot.Types;
 
 namespace TelegramBots.Services
 {
@@ -21,7 +20,8 @@ namespace TelegramBots.Services
 
         public void Start()
         {
-            User user = _telegramBotClient.GetMeAsync().Result;
+            // todo: remove unused variable
+            var user = _telegramBotClient.GetMeAsync().Result;
 
             _telegramBotClient.OnMessage += OnMessage;
             _telegramBotClient.StartReceiving();
@@ -38,7 +38,7 @@ namespace TelegramBots.Services
             var text = e?.Message?.Text;
             var id = e.Message.Chat.Id;
 
-            User user = e.Message.From;
+            var user = e.Message.From;
             var message = await _messageProcessor.Process(text, id);
             await _telegramBotClient.SendTextMessageAsync(id, message)
                 .ConfigureAwait(false);

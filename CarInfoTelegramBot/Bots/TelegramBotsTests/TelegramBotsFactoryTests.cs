@@ -1,5 +1,4 @@
-﻿using BotCommon;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
 using TelegramBots;
 
@@ -13,8 +12,9 @@ namespace TelegramBotsTests
         [TestInitialize]
         public void Init()
         {
-            var messageProcessor = Substitute.For<IMessageProcessor>();
-            _target = new TelegramBotsFactory(messageProcessor);
+            var carInfoMessageProcessor = Substitute.For<CarInfoTelegramBot.Services.IMessageProcessor>();
+            var englishMessageProcessor = Substitute.For<EnglishTelegramBot.Services.IMessageProcessor>();
+            _target = new TelegramBotsFactory(carInfoMessageProcessor, englishMessageProcessor);
         }
 
         [TestMethod]

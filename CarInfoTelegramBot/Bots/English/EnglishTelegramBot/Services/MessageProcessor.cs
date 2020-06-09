@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Net;
 using System.Threading.Tasks;
-using BotCommon;
 using EnglishCommon.Models;
 using EnglishDbService;
 using LoggerCommon;

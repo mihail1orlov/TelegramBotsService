@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using BotCommon;
 using CarInfoCommon.Models;
 using CarInfoDbService;
 using LoggerCommon;
@@ -26,6 +25,7 @@ namespace CarInfoTelegramBot.Services
             if (carInfo == null)
             {
                 carInfo = new CarInfo(44);
+                carInfo.Id = "72B0DF11A044482EB1568BFA289E6800";
                 Save(carInfo);
             }
 

@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using BotCommon;
 using CarInfoDbService;
 using CarInfoTelegramBot.Services;
 
