@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Threading.Tasks;
+using System.Web;
 using EnglishCommon.Models;
 using EnglishDbService;
 using LoggerCommon;
@@ -22,8 +23,7 @@ namespace EnglishTelegramBot.Services
         {
             _logger.Info($"{nameof(Process)}|start");
             var message = string.Empty;
-
-            TranslateText("стол", "ru|en");
+            message = Translate("стул");
             _logger.Info($"{nameof(Process)}|{nameof(message)}: {message}");
             return message;
         }
@@ -39,24 +39,25 @@ namespace EnglishTelegramBot.Services
             return english;
         }
 
-        private string TranslateText(string input, string languagePair)
+        private string Translate(string word)
         {
-            string url = $"http://www.google.com/translate_t?hl=en&ie=UTF8&text={input}&langpair={languagePair}";
-
-            WebClient webClient = new WebClient
+            var toLanguage = "en";//English
+            var fromLanguage = "ru";
+            var url = $"https://translate.googleapis.com/translate_a/single?client=gtx&sl={fromLanguage}&tl={toLanguage}&dt=t&q={HttpUtility.UrlEncode(word)}";
+            var webClient = new WebClient
             {
                 Encoding = System.Text.Encoding.UTF8
             };
-
-            string result = webClient.DownloadString(url);
-
-            // todo: StringComparison.InvariantCulture need to clarify
-            result = result.Substring(result.IndexOf("id=result_box", StringComparison.Ordinal) + 22,
-                result.IndexOf("id=result_box", StringComparison.Ordinal) + 500);
-
-            result = result.Substring(0, result.IndexOf("</div", StringComparison.Ordinal));
-
-            return result;
+            var result = webClient.DownloadString(url);
+            try
+            {
+                result = result.Substring(4, result.IndexOf("\"", 4, StringComparison.Ordinal) - 4);
+                return result;
+            }
+            catch
+            {
+                return "Error";
+            }
         }
     }
 }
