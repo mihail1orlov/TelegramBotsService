@@ -24,8 +24,11 @@ namespace CarInfoTelegramBot.Services
             var carInfo = Load("72B0DF11A044482EB1568BFA289E6800");
             if (carInfo == null)
             {
-                carInfo = new CarInfo(44);
-                carInfo.Id = "72B0DF11A044482EB1568BFA289E6800";
+                carInfo = new CarInfo(44)
+                {
+                    Id = "72B0DF11A044482EB1568BFA289E6800"
+                };
+
                 Save(carInfo);
             }
 
