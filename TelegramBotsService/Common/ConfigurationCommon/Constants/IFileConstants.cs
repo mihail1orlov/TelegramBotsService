@@ -1,4 +1,4 @@
-﻿namespace Service.Constants
+﻿namespace ConfigurationCommon.Constants
 {
     public interface IFileConstants
     {

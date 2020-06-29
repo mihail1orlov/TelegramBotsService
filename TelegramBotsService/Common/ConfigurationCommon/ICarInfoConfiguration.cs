@@ -1,4 +1,4 @@
-﻿namespace Service.Configuration
+﻿namespace ConfigurationCommon
 {
     public interface ICarInfoConfiguration
     {

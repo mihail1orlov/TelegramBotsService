@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using ConfigurationCommon;
+using ConfigurationCommon.Constants;
+using Microsoft.Extensions.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
-using Service.Configuration;
-using Service.Constants;
 
-namespace CarInfoTelegramBotServiceTests.Configuration
+namespace ConfigurationCommonTests
 {
     [TestClass]
     public class CarInfoConfigurationTests

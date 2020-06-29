@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
-using Service.Constants;
+﻿using ConfigurationCommon.Constants;
+using Microsoft.Extensions.Configuration;
 
-namespace Service.Configuration
+namespace ConfigurationCommon
 {
     public class CarInfoConfiguration : ICarInfoConfiguration
     {

@@ -3,7 +3,7 @@ using ConfigurationCommon;
 using ConfigurationCommon.Constants;
 using Microsoft.Extensions.Configuration;
 
-namespace Service
+namespace Host
 {
     public class Bootstrapper
     {

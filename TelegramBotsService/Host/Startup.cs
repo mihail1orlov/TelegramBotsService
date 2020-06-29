@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ServiceProcess;
 using Autofac;
 using Autofac.Extras.CommonServiceLocator;
 using CommonServiceLocator;
@@ -7,9 +6,9 @@ using ConfigurationCommon;
 using LoggerCommon;
 using TelegramBots;
 
-namespace Service
+namespace Host
 {
-    public class Startup
+    class Startup
     {
         private static ILogger _logger;
 
@@ -32,29 +31,18 @@ namespace Service
             var carInfoConfig = ServiceLocator.Current.GetInstance<ICarInfoConfiguration>();
             var englishConfig = ServiceLocator.Current.GetInstance<IEnglishConfiguration>();
 
-
             var svc = new MainService(new[]
             {
                 factory.GetCarInfoService(carInfoConfig.Token),
                 factory.GetEnglishService(englishConfig.Token),
             });
 
-            if (Array.IndexOf(args, "console") != -1 || Array.IndexOf(args, "c") != -1)
-            {
-                svc.StartSvc();
-                _logger.Info($"{nameof(Startup)}|started in console mode");
-                Console.WriteLine("Press a key for exit...");
-                Console.ReadKey(true);
-                svc.StopSvc();
-                _logger.Info($"{nameof(Startup)}|stoped");
-            }
-            else
-            {
-                _logger.Info($"{nameof(Startup)}|started in service mode");
-                ServiceBase.Run(svc);
-                _logger.Info($"{nameof(Startup)}|stoped");
-            }
-            
+            svc.StartSvc();
+            _logger.Info($"{nameof(Startup)}|started in console mode");
+            Console.WriteLine("Press a key for exit...");
+            Console.ReadKey(true);
+            svc.StopSvc();
+            _logger.Info($"{nameof(Startup)}|stoped");
             _logger.Shutdown();
         }
 

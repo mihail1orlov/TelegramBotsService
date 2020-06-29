@@ -1,7 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Service.Constants;
+﻿using ConfigurationCommon.Constants;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ServiceTests.Constants
+namespace ConfigurationCommonTests.Constants
 {
     [TestClass]
     public class FileConstantsTests
