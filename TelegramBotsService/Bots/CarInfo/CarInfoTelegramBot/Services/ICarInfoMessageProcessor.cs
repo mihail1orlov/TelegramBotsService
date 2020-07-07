@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using EnglishTelegramBot.Services;
+using CommonServices;
 
 namespace CarInfoTelegramBot.Services
 {

@@ -6,6 +6,7 @@ using CommonServiceLocator;
 using ConfigurationCommon;
 using LoggerCommon;
 using TelegramBots;
+using TelegramBots.Entities;
 
 namespace Service
 {
@@ -35,8 +36,8 @@ namespace Service
 
             var svc = new MainService(new[]
             {
-                factory.GetCarInfoService(carInfoConfig.Token),
-                factory.GetEnglishService(englishConfig.Token),
+                factory.GetTelegramBot(carInfoConfig.Token, TelegramBot.CarInfoService),
+                factory.GetTelegramBot(englishConfig.Token, TelegramBot.EnglishService),
             });
 
             if (Array.IndexOf(args, "console") != -1 || Array.IndexOf(args, "c") != -1)

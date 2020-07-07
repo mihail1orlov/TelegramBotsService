@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace EnglishTelegramBot.Services
+namespace CommonServices
 {
     public interface IMessageProcessor
     {

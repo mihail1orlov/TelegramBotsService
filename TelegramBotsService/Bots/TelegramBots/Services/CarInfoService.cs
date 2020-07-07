@@ -1,4 +1,5 @@
 ﻿using CarInfoTelegramBot.Services;
+using CommonServices;
 using ServiceCommon;
 using Telegram.Bot;
 using Telegram.Bot.Args;
@@ -11,10 +12,10 @@ namespace TelegramBots.Services
         private readonly ICarInfoMessageProcessor _carInfoMessageProcessor;
 
         public CarInfoService(ITelegramBotClient telegramBotClient,
-            ICarInfoMessageProcessor carInfoMessageProcessor)
+            IMessageProcessor carInfoMessageProcessor)
         {
             _telegramBotClient = telegramBotClient;
-            _carInfoMessageProcessor = carInfoMessageProcessor;
+            _carInfoMessageProcessor = carInfoMessageProcessor as ICarInfoMessageProcessor;
         }
 
         public void Start()

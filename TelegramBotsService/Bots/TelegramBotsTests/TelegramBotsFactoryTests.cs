@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
 using TelegramBots;
+using TelegramBots.Services.Factories;
 
 namespace TelegramBotsTests
 {
@@ -12,17 +13,6 @@ namespace TelegramBotsTests
         [TestInitialize]
         public void Init()
         {
-            var carInfoMessageProcessor = Substitute.For<CarInfoTelegramBot.Services.ICarInfoMessageProcessor>();
-            var englishMessageProcessor = Substitute.For<EnglishTelegramBot.Services.IEnglishMessageProcessor>();
-            _target = new TelegramBotsFactory(carInfoMessageProcessor, englishMessageProcessor);
-        }
-
-        [TestMethod]
-        public void GetCarInfoServiceTest()
-        {
-            // todo: incorrect implementation gives to incorrect test
-            var actual = _target.GetCarInfoService("token");
-            Assert.IsNotNull(actual);
         }
     }
 }

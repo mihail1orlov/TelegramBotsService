@@ -1,4 +1,5 @@
 ﻿using System;
+using CommonServices;
 using EnglishTelegramBot.Services;
 using ServiceCommon;
 using Telegram.Bot;
@@ -12,10 +13,10 @@ namespace TelegramBots.Services
         private readonly IEnglishMessageProcessor _englishMessageProcessor;
 
         public EnglishService(ITelegramBotClient telegramBotClient,
-            IEnglishMessageProcessor englishMessageProcessor)
+            IMessageProcessor englishMessageProcessor)
         {
             _telegramBotClient = telegramBotClient;
-            _englishMessageProcessor = englishMessageProcessor;
+            _englishMessageProcessor = englishMessageProcessor as IEnglishMessageProcessor;
         }
 
         public void Start()

@@ -1,7 +1,12 @@
 ﻿using Autofac;
+using Autofac.Core;
 using ConfigurationCommon;
 using ConfigurationCommon.Constants;
+using LoggerCommon;
 using Microsoft.Extensions.Configuration;
+using MongoDB.Driver;
+using MongoDbCommon;
+using TelegramBots.Services.Factories;
 
 namespace Service
 {
@@ -20,6 +25,14 @@ namespace Service
             // you can say so:
             builder.RegisterType<CarInfoConfiguration>().AsSelf().As<ICarInfoConfiguration>();
             builder.RegisterType<EnglishConfiguration>().AsSelf().As<IEnglishConfiguration>();
+
+            builder.RegisterType<EnglishMessageProcessorFactory>().As<MessageProcessorFactoryBase>().AsSelf();
+            builder.RegisterType<CarInfoMessageProcessorFactory>().As<MessageProcessorFactoryBase>().AsSelf();
+
+            builder.Register(ctx => new EnglishMessageProcessorFactory(ctx.Resolve<IMongoClient>(),
+                ctx.Resolve<IConnectionSettings>(), ctx.Resolve<ILogger>()));
+            builder.Register(ctx => new CarInfoMessageProcessorFactory(ctx.Resolve<IMongoClient>(),
+                ctx.Resolve<IConnectionSettings>(), ctx.Resolve<ILogger>()));
         }
     }
 }
