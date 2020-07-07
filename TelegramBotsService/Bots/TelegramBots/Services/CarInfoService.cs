@@ -1,4 +1,5 @@
 ﻿using CarInfoTelegramBot.Services;
+using CommonServices;
 using ServiceCommon;
 using Telegram.Bot;
 using Telegram.Bot.Args;
@@ -8,13 +9,13 @@ namespace TelegramBots.Services
     public class CarInfoService : IService
     {
         private readonly ITelegramBotClient _telegramBotClient;
-        private readonly IMessageProcessor _messageProcessor;
+        private readonly ICarInfoMessageProcessor _carInfoMessageProcessor;
 
         public CarInfoService(ITelegramBotClient telegramBotClient,
-            IMessageProcessor messageProcessor)
+            IMessageProcessor carInfoMessageProcessor)
         {
             _telegramBotClient = telegramBotClient;
-            _messageProcessor = messageProcessor;
+            _carInfoMessageProcessor = carInfoMessageProcessor as ICarInfoMessageProcessor;
         }
 
         public void Start()
@@ -37,7 +38,7 @@ namespace TelegramBots.Services
             var id = e.Message.Chat.Id;
 
             var user = e.Message.From;
-            var message = await _messageProcessor.Process(text, id);
+            var message = await _carInfoMessageProcessor.Process(text, id);
             await _telegramBotClient.SendTextMessageAsync(id, message)
                 .ConfigureAwait(false);
         }

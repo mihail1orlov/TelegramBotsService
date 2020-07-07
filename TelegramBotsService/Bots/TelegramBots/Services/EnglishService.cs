@@ -1,4 +1,5 @@
 ﻿using System;
+using CommonServices;
 using EnglishTelegramBot.Services;
 using ServiceCommon;
 using Telegram.Bot;
@@ -9,13 +10,13 @@ namespace TelegramBots.Services
     public class EnglishService : Exception, IService
     {
         private readonly ITelegramBotClient _telegramBotClient;
-        private readonly IMessageProcessor _messageProcessor;
+        private readonly IEnglishMessageProcessor _englishMessageProcessor;
 
         public EnglishService(ITelegramBotClient telegramBotClient,
-            IMessageProcessor messageProcessor)
+            IMessageProcessor englishMessageProcessor)
         {
             _telegramBotClient = telegramBotClient;
-            _messageProcessor = messageProcessor;
+            _englishMessageProcessor = englishMessageProcessor as IEnglishMessageProcessor;
         }
 
         public void Start()
@@ -39,7 +40,7 @@ namespace TelegramBots.Services
             var id = e.Message.Chat.Id;
 
             var user = e.Message.From;
-            var message = await _messageProcessor.Process(text, id);
+            var message = await _englishMessageProcessor.Process(text, id);
             await _telegramBotClient.SendTextMessageAsync(id, message)
                 .ConfigureAwait(false);
         }

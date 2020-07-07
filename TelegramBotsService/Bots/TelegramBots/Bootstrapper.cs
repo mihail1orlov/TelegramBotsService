@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using TelegramBots.Services.Factories;
 
 namespace TelegramBots
 {

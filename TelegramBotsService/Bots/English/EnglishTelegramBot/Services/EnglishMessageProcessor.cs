@@ -8,12 +8,12 @@ using LoggerCommon;
 
 namespace EnglishTelegramBot.Services
 {
-    public class MessageProcessor : IMessageProcessor
+    public class EnglishMessageProcessor : IEnglishMessageProcessor
     {
         private readonly IEnglishRepository _englishRepository;
         private readonly ILogger _logger;
 
-        public MessageProcessor(IEnglishRepository englishRepository, ILogger logger)
+        public EnglishMessageProcessor(IEnglishRepository englishRepository, ILogger logger)
         {
             _englishRepository = englishRepository;
            _logger = logger;
