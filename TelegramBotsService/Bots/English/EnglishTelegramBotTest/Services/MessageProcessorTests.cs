@@ -9,14 +9,14 @@ namespace EnglishTelegramBotTest.Services
     [TestClass]
     public class MessageProcessorTests
     {
-        private MessageProcessor _target;
+        private EnglishMessageProcessor _target;
 
         [TestInitialize]
         public void Init()
         {
             var englishRepository = Substitute.For<IEnglishRepository>();
             var logger = Substitute.For<ILogger>();
-            _target = new MessageProcessor(englishRepository, logger);
+            _target = new EnglishMessageProcessor(englishRepository, logger);
         }
 
         [TestMethod]

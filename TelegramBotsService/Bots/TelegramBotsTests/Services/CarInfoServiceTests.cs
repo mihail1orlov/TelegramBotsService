@@ -16,7 +16,7 @@ namespace TelegramBotsTests.Services
         public void Init()
         {
             _telegramBotClient = Substitute.For<ITelegramBotClient>();
-            var messageProcessor = Substitute.For<IMessageProcessor>();
+            var messageProcessor = Substitute.For<ICarInfoMessageProcessor>();
             _target = new CarInfoService(_telegramBotClient, messageProcessor);
         }
 

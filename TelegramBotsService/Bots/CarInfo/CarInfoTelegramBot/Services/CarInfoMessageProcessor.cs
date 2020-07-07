@@ -5,12 +5,12 @@ using LoggerCommon;
 
 namespace CarInfoTelegramBot.Services
 {
-    public class MessageProcessor : IMessageProcessor
+    public class CarInfoMessageProcessor : ICarInfoMessageProcessor
     {
         private readonly ICarInfoRepository _carInfoRepository;
         private readonly ILogger _logger;
 
-        public MessageProcessor(ICarInfoRepository carInfoRepository, ILogger logger)
+        public CarInfoMessageProcessor(ICarInfoRepository carInfoRepository, ILogger logger)
         {
             _carInfoRepository = carInfoRepository;
             _logger = logger;

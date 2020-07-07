@@ -9,7 +9,7 @@ namespace EnglishTelegramBot
         public void BootStrap(ContainerBuilder builder)
         {
             new EnglishDbService.Bootstrapper().BootStrap(builder);
-            builder.RegisterType<MessageProcessor>().As<IMessageProcessor>();
+            builder.RegisterType<EnglishMessageProcessor>().As<IEnglishMessageProcessor>();
             builder.RegisterType<EnglishRepository>().As<IEnglishRepository>();
         }
     }

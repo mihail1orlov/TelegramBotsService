@@ -12,8 +12,8 @@ namespace TelegramBotsTests
         [TestInitialize]
         public void Init()
         {
-            var carInfoMessageProcessor = Substitute.For<CarInfoTelegramBot.Services.IMessageProcessor>();
-            var englishMessageProcessor = Substitute.For<EnglishTelegramBot.Services.IMessageProcessor>();
+            var carInfoMessageProcessor = Substitute.For<CarInfoTelegramBot.Services.ICarInfoMessageProcessor>();
+            var englishMessageProcessor = Substitute.For<EnglishTelegramBot.Services.IEnglishMessageProcessor>();
             _target = new TelegramBotsFactory(carInfoMessageProcessor, englishMessageProcessor);
         }
 

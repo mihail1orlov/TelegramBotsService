@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\CommonServices\CommonServices.csproj" />
     <ProjectReference Include="..\..\..\Common\LoggerCommon\LoggerCommon.csproj" />
     <ProjectReference Include="..\..\..\DataBase\EnglishDbService\EnglishDbService.csproj" />
     <ProjectReference Include="..\Common\EnglishCommon\EnglishCommon.csproj" />
