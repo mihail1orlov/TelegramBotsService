@@ -5,6 +5,8 @@ using CommonServiceLocator;
 using ConfigurationCommon;
 using LoggerCommon;
 using TelegramBots;
+using TelegramBots.Entities;
+using TelegramBots.Services.Factories;
 
 namespace Host
 {
@@ -33,8 +35,8 @@ namespace Host
 
             var svc = new MainService(new[]
             {
-                factory.GetCarInfoService(carInfoConfig.Token),
-                factory.GetEnglishService(englishConfig.Token),
+                factory.GetTelegramBot(carInfoConfig.Token, TelegramBot.CarInfoService),
+                factory.GetTelegramBot(englishConfig.Token, TelegramBot.EnglishService)
             });
 
             svc.StartSvc();

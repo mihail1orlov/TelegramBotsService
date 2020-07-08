@@ -21,4 +21,8 @@
     <ProjectReference Include="..\TelegramBots\TelegramBots.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\Factories\" />
+  </ItemGroup>
+
 </Project>
