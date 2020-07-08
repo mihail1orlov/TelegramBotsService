@@ -1,7 +1,7 @@
 ﻿using ServiceCommon;
 using TelegramBots.Entities;
 
-namespace TelegramBots
+namespace TelegramBots.Services.Factories
 {
     /// <summary>
     /// Provides a factory that allows you to get an instance of <see cref= "IService"/> that

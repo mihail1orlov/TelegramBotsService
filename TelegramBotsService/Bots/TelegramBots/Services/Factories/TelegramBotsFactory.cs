@@ -1,4 +1,5 @@
-﻿using CommonServices;
+﻿using System;
+using CommonServices;
 using ServiceCommon;
 using Telegram.Bot;
 using TelegramBots.Entities;
@@ -12,14 +13,14 @@ namespace TelegramBots.Services.Factories
     public class TelegramBotsFactory : ITelegramBotsFactory
     {
         // Private fields
-        private readonly MessageProcessorFactoryBase _messageProcessorFactoryBase;
+        private readonly IMessageProcessorFactory _messageProcessorFactoryBase;
 
         /// <summary>
         /// Creates Instance of <see cref="TelegramBotsFactory"/>
         /// </summary>
         /// <param name="messageProcessorFactory">Provides a factory that allows you to get an instance of <see cref= "IMessageProcessor"/>
         /// that is responsible for the basic functionality of the desired bot.</param>
-        public TelegramBotsFactory(MessageProcessorFactoryBase messageProcessorFactory)
+        public TelegramBotsFactory(IMessageProcessorFactory messageProcessorFactory)
         {
             _messageProcessorFactoryBase = messageProcessorFactory;
         }
@@ -41,7 +42,7 @@ namespace TelegramBots.Services.Factories
                     return new EnglishService(new TelegramBotClient(token),
                         _messageProcessorFactoryBase.GetMessageProcessor());
                 default:
-                    return null;
+                    throw new ArgumentException();
             }
         }
     }

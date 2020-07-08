@@ -9,6 +9,7 @@ namespace TelegramBots
         {
             new CarInfoTelegramBot.Bootstrapper().BootStrap(builder);
             new EnglishTelegramBot.Bootstrapper().BootStrap(builder);
+
             builder.RegisterType<TelegramBotsFactory>().As<ITelegramBotsFactory>();
         }
     }

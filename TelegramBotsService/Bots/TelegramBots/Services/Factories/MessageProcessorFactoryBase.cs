@@ -9,7 +9,7 @@ namespace TelegramBots.Services.Factories
     /// Provides a factory that allows you to get an instance of <see cref= "IMessageProcessor"/>
     /// that is responsible for the basic functionality of the desired bot.
     /// </summary>
-    public abstract class MessageProcessorFactoryBase
+    public abstract class MessageProcessorFactoryBase : IMessageProcessorFactory
     {
         /// <summary>
         /// Creates instance of the necessary Message processor factory
@@ -27,17 +27,17 @@ namespace TelegramBots.Services.Factories
         /// <summary>
         /// The client interface to MongoDB.
         /// </summary>
-        public IMongoClient Client { get; }
+        protected IMongoClient Client { get; }
 
         /// <summary>
         /// The connection string to connect to the database.
         /// </summary>
-        public IConnectionSettings ConnectionSettings { get; }
+        protected IConnectionSettings ConnectionSettings { get; }
 
         /// <summary>
         /// Provides logging.
         /// </summary>
-        public ILogger Logger { get; }
+        protected ILogger Logger { get; }
 
         /// <summary>
         /// Gets the necessary MessageProcessor

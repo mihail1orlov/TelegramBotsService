@@ -6,6 +6,10 @@
     public enum TelegramBot
     {
         /// <summary>
+        /// None
+        /// </summary>
+        None,
+        /// <summary>
         /// CarInfo telegram bot
         /// </summary>
         CarInfoService,
