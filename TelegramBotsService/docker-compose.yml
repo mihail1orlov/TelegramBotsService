@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+    db:
+        image: mongo
+        ports:
+            - 27017:27017
+
+    tbs:
+        image: tbs
+#        image: mihail1orlov/tbs:sdk
+#        ports:
+#            - 27017:27017
+
+networks:
+    default:
+        external:
+            name: tbs-nat
