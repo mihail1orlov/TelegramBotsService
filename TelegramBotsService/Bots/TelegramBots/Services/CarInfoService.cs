@@ -19,8 +19,6 @@ namespace TelegramBots.Services
 
         public void Start()
         {
-            var user = _telegramBotClient.GetMeAsync().Result;
-
             _telegramBotClient.OnMessage += OnMessage;
             _telegramBotClient.StartReceiving();
         }
@@ -37,8 +35,8 @@ namespace TelegramBots.Services
             var id = e.Message.Chat.Id;
 
             var user = e.Message.From;
-            var message = await _messageProcessor.Process(text, id);
-            await _telegramBotClient.SendTextMessageAsync(id, message)
+            //var message = await _messageProcessor.Process(text, id);
+            await _telegramBotClient.SendTextMessageAsync(id, $"message: {text}")
                 .ConfigureAwait(false);
         }
     }

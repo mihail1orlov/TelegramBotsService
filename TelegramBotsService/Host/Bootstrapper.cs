@@ -20,6 +20,8 @@ namespace Host
             // you can say so:
             builder.RegisterType<CarInfoConfiguration>().AsSelf().As<ICarInfoConfiguration>();
             builder.RegisterType<EnglishConfiguration>().AsSelf().As<IEnglishConfiguration>();
+            builder.RegisterType<GitHubNotificatorConfiguration>().AsSelf().As<IGitHubNotificatorConfiguration>();
+            builder.RegisterType<AvtoCarDriveConfiguration>().AsSelf().As<IAvtoCarDriveConfiguration>();
         }
     }
 }

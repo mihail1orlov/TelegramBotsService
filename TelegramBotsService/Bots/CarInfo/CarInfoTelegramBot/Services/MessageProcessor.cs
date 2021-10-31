@@ -19,6 +19,7 @@ namespace CarInfoTelegramBot.Services
         public async Task<string> Process(string text, long id)
         {
             _logger.Info($"{nameof(Process)}|start");
+
             string message;
 
             var carInfo = Load("72B0DF11A044482EB1568BFA289E6800");

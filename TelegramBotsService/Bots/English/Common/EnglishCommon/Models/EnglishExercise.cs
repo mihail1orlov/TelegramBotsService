@@ -26,12 +26,5 @@ namespace EnglishCommon.Models
 
             set => _id = value;
         }
-
-        public int Mileage { get; set; }
-
-        public EnglishExercise(int mileage)
-        {
-            Mileage = mileage;
-        }
     }
 }

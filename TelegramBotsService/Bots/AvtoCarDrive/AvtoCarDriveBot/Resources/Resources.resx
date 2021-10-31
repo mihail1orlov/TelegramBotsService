@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddCar" xml:space="preserve">
+    <value>Добавить автомобиль</value>
+  </data>
+  <data name="AddFeedback" xml:space="preserve">
+    <value>Добавить отзыв</value>
+  </data>
+  <data name="AddNewAdmin" xml:space="preserve">
+    <value>Добавить нового админа</value>
+  </data>
+  <data name="AddNewId" xml:space="preserve">
+    <value>Добавить идентификатор</value>
+  </data>
+  <data name="AdminAlreadyExists" xml:space="preserve">
+    <value>Такой идентификтор уже добавлен</value>
+  </data>
+  <data name="AdminAlreadyRemoved" xml:space="preserve">
+    <value>Администратор отсутсвует в списке</value>
+  </data>
+  <data name="AdminWasAdded" xml:space="preserve">
+    <value>Новый админ добавлен!</value>
+  </data>
+  <data name="AdminWasRemoved" xml:space="preserve">
+    <value>Администратор удален</value>
+  </data>
+  <data name="AvailableAdmins" xml:space="preserve">
+    <value>Список идентификаторов:</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>↩ Назад</value>
+  </data>
+  <data name="BackMessage" xml:space="preserve">
+    <value>Вы вернулись в предыдущее меню</value>
+  </data>
+  <data name="CarAlreadyRemoved" xml:space="preserve">
+    <value>Автомобиля нету в списке</value>
+  </data>
+  <data name="Cars" xml:space="preserve">
+    <value>Автомобили</value>
+  </data>
+  <data name="CarWasAdded" xml:space="preserve">
+    <value>Автомобиль успешно добавлен</value>
+  </data>
+  <data name="CarWasRemoved" xml:space="preserve">
+    <value>Автомобиль успешн удален</value>
+  </data>
+  <data name="ChangeCar" xml:space="preserve">
+    <value>Изменить автомобиль</value>
+  </data>
+  <data name="ChangeDescription" xml:space="preserve">
+    <value>Изменить описание бота</value>
+  </data>
+  <data name="ChangeTitle" xml:space="preserve">
+    <value>Изменить название бота</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Готово</value>
+  </data>
+  <data name="EnterCarInfo" xml:space="preserve">
+    <value>Введите информацию об автомобиле</value>
+  </data>
+  <data name="EnterTheIdForRemoving" xml:space="preserve">
+    <value>Введите идентификатор для удаления</value>
+  </data>
+  <data name="EnterTheNewId" xml:space="preserve">
+    <value>Введите идентификатор</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Неверный ввод</value>
+  </data>
+  <data name="Feedbacks" xml:space="preserve">
+    <value>Отзывы</value>
+  </data>
+  <data name="InDevelopment" xml:space="preserve">
+    <value>В разработке</value>
+  </data>
+  <data name="InfoWasAdded" xml:space="preserve">
+    <value>Информация добавлена</value>
+  </data>
+  <data name="ListOfAdmins" xml:space="preserve">
+    <value>Список админов</value>
+  </data>
+  <data name="MessageForLogger" xml:space="preserve">
+    <value>{0} | The {1} has been sended | User : {2}; Id : {3};</value>
+  </data>
+  <data name="NowhereBack" xml:space="preserve">
+    <value>Назад некуда</value>
+  </data>
+  <data name="Photos" xml:space="preserve">
+    <value>Отправил фотографии</value>
+  </data>
+  <data name="RemoveAdmin" xml:space="preserve">
+    <value>Убрать админа</value>
+  </data>
+  <data name="RemoveCar" xml:space="preserve">
+    <value>Убрать автомобиль</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="StartAdminMessage" xml:space="preserve">
+    <value>Вы  администратор этого бота</value>
+  </data>
+  <data name="StartMessage" xml:space="preserve">
+    <value>{0} | The start message has been sended | User : {1}; Id : {2};</value>
+  </data>
+  <data name="StartUserMessage" xml:space="preserve">
+    <value>Денис Сергеевич
+Пригон авто из Европы 🇪🇺 и Грузии 🇬🇪 
+Ссылка на петицию : 🔜goo.su/1nOk
+Консультации по номеру телефона
++380939349912</value>
+  </data>
+  <data name="StockCars" xml:space="preserve">
+    <value>Авто в наличии</value>
+  </data>
+  <data name="String" xml:space="preserve">
+    <value>1086801118:AAHLeXeRbILocram22nEf3GEC6u2viIBghY</value>
+  </data>
+  <data name="TurnkeyAutos" xml:space="preserve">
+    <value>Авто под ключ</value>
+  </data>
+  <data name="UserMenu" xml:space="preserve">
+    <value>Меню клиента</value>
+  </data>
+</root>

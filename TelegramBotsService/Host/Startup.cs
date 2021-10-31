@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using Autofac;
 using Autofac.Extras.CommonServiceLocator;
 using CommonServiceLocator;
@@ -8,7 +9,7 @@ using TelegramBots;
 
 namespace Host
 {
-    class Startup
+    public class Startup
     {
         private static ILogger _logger;
 
@@ -30,17 +31,26 @@ namespace Host
             // This is configuration provider
             var carInfoConfig = ServiceLocator.Current.GetInstance<ICarInfoConfiguration>();
             var englishConfig = ServiceLocator.Current.GetInstance<IEnglishConfiguration>();
+            var gitHubNotificatorConfig = ServiceLocator.Current.GetInstance<IGitHubNotificatorConfiguration>();
+            var avtoCarDriveConfig = ServiceLocator.Current.GetInstance<IAvtoCarDriveConfiguration>();
 
             var svc = new MainService(new[]
             {
                 factory.GetCarInfoService(carInfoConfig.Token),
                 factory.GetEnglishService(englishConfig.Token),
+                factory.GetGitHubNotificatorService(gitHubNotificatorConfig.Token),
+                factory.GetAvtoCarDriveService(avtoCarDriveConfig.Token),
             });
 
             svc.StartSvc();
             _logger.Info($"{nameof(Startup)}|started in console mode");
+
+#if (DEBUG)
+            Console.OutputEncoding = Encoding.UTF8;
             Console.WriteLine("Press a key for exit...");
-            Console.ReadKey(true);
+#endif
+            Console.In.ReadLine();
+
             svc.StopSvc();
             _logger.Info($"{nameof(Startup)}|stoped");
             _logger.Shutdown();

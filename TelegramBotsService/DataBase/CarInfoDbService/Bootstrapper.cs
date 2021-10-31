@@ -12,7 +12,7 @@ namespace CarInfoDbService
                     new MongoClientSettings
                     {
                         Server = new MongoServerAddress(
-                            "db",
+                            "localhost",
                             int.Parse("27017"))
                     }))
                 .As<IMongoClient>().SingleInstance();
